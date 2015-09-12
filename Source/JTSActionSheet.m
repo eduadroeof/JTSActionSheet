@@ -21,7 +21,6 @@
 
 @property (strong, nonatomic, readwrite) JTSActionSheetTheme *theme;
 @property (weak, nonatomic, readwrite) id <JTSActionSheetDelegate> delegate;
-@property (copy, nonatomic, readwrite) NSString *title;
 @property (strong, nonatomic, readwrite) JTSActionSheetItem *cancelItem;
 @property (strong, nonatomic) NSArray *actionItems;
 @property (strong, nonatomic) JTSActionSheetTitleView *titleView;
@@ -286,6 +285,12 @@
     }
     
     return separators;
+}
+
+- (void)setTitle:(NSString *)title
+{
+    _title = title;
+    [self.titleView setTitle:_title];
 }
 
 #pragma mark - Button View Delegate
