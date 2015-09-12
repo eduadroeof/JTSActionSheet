@@ -114,6 +114,17 @@
 
 #pragma mark - JTSActionSheetItemView
 
+- (void)setEnabled:(BOOL)enabled
+{
+    [self.button setEnabled:enabled];
+    if (enabled) {
+        [self.button setTitleColor:self.theme.normalButtonColor forState:UIControlStateNormal];
+    }
+    else {
+        [self.button setTitleColor:self.theme.disabledButtonColor forState:UIControlStateNormal];
+    }
+}
+
 - (CGFloat)intrinsicHeightGivenAvailableWidth:(CGFloat)availableWidth {
     CGFloat actualHeight = roundf(self.theme.normalButtonFont.capHeight + JTSActionSheetMargin * 4.0);
     return MAX(actualHeight, 44.0);

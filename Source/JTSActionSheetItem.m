@@ -26,6 +26,7 @@
     item.title = title;
     item.actionBlock = actionBlock;
     item.destructive = isDestructive;
+    item.enabled = YES
     
     return item;
 }
