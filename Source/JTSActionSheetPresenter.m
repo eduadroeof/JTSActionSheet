@@ -40,7 +40,7 @@
     self.currentViewController.delegate = self;
     self.currentViewController.view.frame = rootVC.view.frame;
     self.currentViewController.view.transform = rootVC.view.transform;
-    [rootVC.view.superview addSubview:self.currentViewController.view];
+    [window addSubview:self.currentViewController.view];
     
     [self.currentViewController playPresentationAnimation:YES tintableUnderlyingView:rootVC.view];
 }
